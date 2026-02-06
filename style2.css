@@ -1,0 +1,123 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfbf7 0%, #e6dcc3 100%);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    color: #3e2723;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: flex-start; /* Commence en haut */
+    padding-top: 40px;
+}
+
+/* Conteneur Global pour centrer tout le contenu */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* NAVIGATION */
+.main-nav {
+    display: flex;
+    background: #fff;
+    padding: 5px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.nav-item {
+    padding: 10px 25px;
+    border-radius: 40px;
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    color: #8d6e63;
+    cursor: pointer;
+}
+.nav-item.active { background: #1a1a1a; color: #d4af37; }
+
+/* CARTES */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(62, 39, 35, 0.1);
+    width: 100%; /* Prend toute la largeur du wrapper */
+    text-align: center;
+    border: 1px solid #f0e6d2;
+    box-sizing: border-box;
+}
+
+/* CHAT SPÉCIFIQUE */
+.chat-card-full {
+    height: 600px; /* Plus grand */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #fdfbf7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* MESSAGES */
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Alignement GAUCHE pour le Bot */
+.bot-message {
+    background: #e0e0e0;
+    color: #000;
+    align-self: flex-start; /* Force à gauche */
+    text-align: left;
+    border-bottom-left-radius: 2px;
+}
+
+/* Alignement DROITE pour l'utilisateur */
+.user-message {
+    background: #d4af37;
+    color: #fff;
+    align-self: flex-end; /* Force à droite */
+    text-align: left;
+    border-bottom-right-radius: 2px;
+}
+
+/* INPUT */
+.chat-input-area {
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+input { flex: 1; padding: 12px; border-radius: 20px; border: 1px solid #ddd; outline: none; }
+button { cursor: pointer; }
+
+/* Eléments UI classiques (boutons, tags) */
+.tags-container { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+.tag-btn { background: #fff; border: 1px solid #ccc; padding: 6px 12px; border-radius: 15px; cursor: pointer; }
+.textarea-wrapper textarea { width: 100%; height: 100px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; }
+.actions-row { display: flex; gap: 5px; margin-top: 10px; }
+.btn-quick, .btn-deep, .btn-healing { flex: 1; padding: 10px; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; }
+.btn-quick { background: #fff; border: 1px solid #ccc; }
+.btn-deep { background: #333; color: gold; }
+.btn-healing { background: #5d4037; color: white; }
+.view-container { display: none; width: 100%; }
+.view-container.active { display: flex; }
+#replyArea { margin-top: 20px; padding: 15px; background: #fffbe6; border-left: 4px solid gold; text-align: left; display: none; }

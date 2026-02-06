@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown of Insight | I Cried Today</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="breathingOverlay" onclick="stopBreathing()">
+        <div class="breathing-circle"></div>
+    </div>
+
+    <div class="lang-select-container">
+        <select id="languageSelector" onchange="changeLanguage()">
+            <option value="en" selected>🇬🇧 English</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="ar">🇲🇦 العربية</option>
+        </select>
+    </div>
+
+    <div class="main-wrapper">
+        
+        <nav class="main-nav">
+            <button class="nav-item active" onclick="switchView('help')" data-i18n="nav_help">🆘 Ask for Help</button>
+            <button class="nav-item" onclick="switchView('chat')" data-i18n="nav_chat">🧠 Neural AI</button>
+        </nav>
+
+        <div id="view-help" class="view-container active">
+            <div class="card">
+                <div class="crown-header" data-i18n="crown">👑 Crown of Insight</div>
+                <h1 data-i18n="title">I Cried Today</h1>
+                <span class="privacy-badge" data-i18n="badge">🔒 Local & Private</span>
+                <p class="subtitle" data-i18n="subtitle">Unburden your mind. Receive wisdom.</p>
+                
+                <div class="tags-container">
+                    <button class="tag-btn" onclick="addTag('sad')" data-i18n="tag_sad">😢 Sad</button>
+                    <button class="tag-btn" onclick="addTag('anxious')" data-i18n="tag_anxious">😰 Anxious</button>
+                    <button class="tag-btn" onclick="addTag('lonely')" data-i18n="tag_lonely">🌑 Lonely</button>
+                    <button class="tag-btn" onclick="addTag('tired')" data-i18n="tag_tired">😴 Tired</button>
+                    <button class="tag-btn intense" onclick="addTag('destroyed')" data-i18n="tag_destroyed">💔 Destroyed</button>
+                    <button class="tag-btn intense" onclick="addTag('betrayed')" data-i18n="tag_betrayed">🔪 Betrayed</button>
+                    <button class="tag-btn intense" onclick="addTag('used')" data-i18n="tag_used">🧸 Used</button>
+                </div>
+
+                <div class="textarea-wrapper">
+                    <textarea id="userFeeling" placeholder="I am feeling..."></textarea>
+                    <button class="trash-btn-mini" onclick="clearText()">🗑️</button>
+                </div>
+                
+                <div class="actions-row">
+                    <button class="btn-quick" onclick="processFeeling('quick')" data-i18n="btn_quick">⚡ Quick</button>
+                    <button class="btn-deep" onclick="processFeeling('deep')" data-i18n="btn_deep">🛡️ Protocol</button>
+                    <button class="btn-healing" onclick="processFeeling('healing')" data-i18n="btn_healing">🌱 Healing</button>
+                    <button class="btn-healing" onclick="startBreathing()" data-i18n="btn_breathe" style="background:#fff; color:#5d4037; border:2px solid #d7ccc8;">
+                        🌬️ Breathe
+                    </button>
+                </div>
+
+                <div id="replyArea"><p id="replyText"></p></div>
+            </div>
+        </div>
+
+        <div id="view-chat" class="view-container">
+            <div class="card chat-card-full">
+                <div class="chat-header-static">
+                    <span style="font-size: 1.5rem;">🧠</span>
+                    <div>
+                        <strong>Neural Bot</strong>
+                        <div style="font-size: 0.7rem; opacity: 0.7;">Direct & Radical</div>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message" data-i18n="chat_welcome">
+                        I am ready. No pity, only solutions. What is the problem?
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input type="text" id="userInput" placeholder="..." onkeypress="handleChatKeyPress(event)">
+                    <button onclick="sendChatMessage()">➤</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
