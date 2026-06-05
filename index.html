@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crown of Insight | I Cried Today</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="breathingOverlay" onclick="stopBreathing()">
+    <div id="breathingOverlay" onclick="stopBreathing()" style="display:none;">
         <div class="breathing-circle"></div>
+        <p style="color:white; margin-top:20px; font-size:1.2rem; text-align:center;">Inspire... Expire...</p>
     </div>
 
     <div class="lang-select-container">
         <select id="languageSelector" onchange="changeLanguage()">
-            <option value="en" selected>🇬🇧 English</option>
-            <option value="fr">🇫🇷 Français</option>
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇬🇧 English</option>
             <option value="ar">🇲🇦 العربية</option>
         </select>
     </div>
@@ -23,38 +27,38 @@
     <div class="main-wrapper">
         
         <nav class="main-nav">
-            <button class="nav-item active" onclick="switchView('help')" data-i18n="nav_help">🆘 Ask for Help</button>
-            <button class="nav-item" onclick="switchView('chat')" data-i18n="nav_chat">🧠 Neural AI</button>
+            <button class="nav-item active" onclick="switchView('help')" data-i18n="nav_help">🆘 Besoin d'aide</button>
+            <button class="nav-item" onclick="switchView('chat')" data-i18n="nav_chat">🧠 Gardien</button>
         </nav>
 
         <div id="view-help" class="view-container active">
             <div class="card">
                 <div class="crown-header" data-i18n="crown">👑 Crown of Insight</div>
                 <h1 data-i18n="title">I Cried Today</h1>
-                <span class="privacy-badge" data-i18n="badge">🔒 Local & Private</span>
-                <p class="subtitle" data-i18n="subtitle">Unburden your mind. Receive wisdom.</p>
+                <span class="privacy-badge" data-i18n="badge">🔒 Local & Privé</span>
+                <p class="subtitle" data-i18n="subtitle">Libère ton esprit. Reçois la sagesse.</p>
                 
                 <div class="tags-container">
-                    <button class="tag-btn" onclick="addTag('sad')" data-i18n="tag_sad">😢 Sad</button>
-                    <button class="tag-btn" onclick="addTag('anxious')" data-i18n="tag_anxious">😰 Anxious</button>
-                    <button class="tag-btn" onclick="addTag('lonely')" data-i18n="tag_lonely">🌑 Lonely</button>
-                    <button class="tag-btn" onclick="addTag('tired')" data-i18n="tag_tired">😴 Tired</button>
-                    <button class="tag-btn intense" onclick="addTag('destroyed')" data-i18n="tag_destroyed">💔 Destroyed</button>
-                    <button class="tag-btn intense" onclick="addTag('betrayed')" data-i18n="tag_betrayed">🔪 Betrayed</button>
-                    <button class="tag-btn intense" onclick="addTag('used')" data-i18n="tag_used">🧸 Used</button>
+                    <button class="tag-btn" onclick="addTag('sad')" data-i18n="tag_sad">😢 Triste</button>
+                    <button class="tag-btn" onclick="addTag('anxious')" data-i18n="tag_anxious">😰 Anxieux</button>
+                    <button class="tag-btn" onclick="addTag('lonely')" data-i18n="tag_lonely">🌑 Seul</button>
+                    <button class="tag-btn" onclick="addTag('tired')" data-i18n="tag_tired">😴 Fatigué</button>
+                    <button class="tag-btn intense" onclick="addTag('destroyed')" data-i18n="tag_destroyed">💔 Détruit</button>
+                    <button class="tag-btn intense" onclick="addTag('betrayed')" data-i18n="tag_betrayed">🔪 Trahi</button>
+                    <button class="tag-btn intense" onclick="addTag('used')" data-i18n="tag_used">🧸 Utilisé</button>
                 </div>
 
                 <div class="textarea-wrapper">
-                    <textarea id="userFeeling" placeholder="I am feeling..."></textarea>
+                    <textarea id="userFeeling" placeholder="Je me sens..."></textarea>
                     <button class="trash-btn-mini" onclick="clearText()">🗑️</button>
                 </div>
                 
                 <div class="actions-row">
-                    <button class="btn-quick" onclick="processFeeling('quick')" data-i18n="btn_quick">⚡ Quick</button>
-                    <button class="btn-deep" onclick="processFeeling('deep')" data-i18n="btn_deep">🛡️ Protocol</button>
-                    <button class="btn-healing" onclick="processFeeling('healing')" data-i18n="btn_healing">🌱 Healing</button>
+                    <button class="btn-quick" onclick="processFeeling('quick')" data-i18n="btn_quick">⚡ Vite</button>
+                    <button class="btn-deep" onclick="processFeeling('deep')" data-i18n="btn_deep">🛡️ Protocole</button>
+                    <button class="btn-healing" onclick="processFeeling('healing')" data-i18n="btn_healing">🌱 Soin</button>
                     <button class="btn-healing" onclick="startBreathing()" data-i18n="btn_breathe" style="background:#fff; color:#5d4037; border:2px solid #d7ccc8;">
-                        🌬️ Breathe
+                        🌬️ Respirer
                     </button>
                 </div>
 
@@ -67,20 +71,20 @@
                 <div class="chat-header-static">
                     <span style="font-size: 1.5rem;">🧠</span>
                     <div>
-                        <strong>Neural Bot</strong>
-                        <div style="font-size: 0.7rem; opacity: 0.7;">Direct & Radical</div>
+                        <strong>Gardien Émotionnel</strong>
+                        <div style="font-size: 0.7rem; opacity: 0.7;">Ici pour t'écouter</div>
                     </div>
                 </div>
 
-                <div class="chat-messages" id="chatMessages">
-                    <div class="message bot-message" data-i18n="chat_welcome">
-                        I am ready. No pity, only solutions. What is the problem?
+                <div class="chat-messages" id="chat-cried-history">
+                    <div class="bot-msg" data-i18n="chat_welcome">
+                        Bonjour. Je suis là pour t'écouter. Comment te sens-tu aujourd'hui ?
                     </div>
                 </div>
 
                 <div class="chat-input-area">
-                    <input type="text" id="userInput" placeholder="..." onkeypress="handleChatKeyPress(event)">
-                    <button onclick="sendChatMessage()">➤</button>
+                    <input type="text" id="input-cried" placeholder="Écris ici..." autocomplete="off">
+                    <button onclick="handleChat('cried')" id="btn-send">➤</button>
                 </div>
             </div>
         </div>
