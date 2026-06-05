@@ -1,4 +1,4 @@
 # KaringowGM-i-cried-today
-I Cried Today is a digital sanctuary designed to provide a breathing space in a fast-paced world. Part of the Crown of Insight ecosystem, this web application aims to normalize emotional expression through a soothing "Royal Light" interface. Developed as a Single Page Application (SPA) using HTML, CSS, and Vanilla JavaScript, it features a responsive design, multi-language support (English, French, and Arabic), and an interactive chat.
-This project reflects my journey in coding 100% with Google Gemini AI.
-But in the future, my projects will be created by my own programming/developping skills when I learn to.
+I Cried Today is a open space for people to confess/tell their feelings and it is here to help you understand why do you feel that way and help you to learn what do you have to do now.
+The main idea and functionalities creatives ideas are thought about by myself.
+Fully (100%) created by Google Gemini AI 3.1 Pro.
